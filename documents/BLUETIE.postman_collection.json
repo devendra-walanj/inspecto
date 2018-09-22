@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "d419bcf7-996e-4666-b759-a327bd8cf978",
+		"name": "BLUETIE",
+		"description": "An inspection company wants to create a software which needs to track the progress of the Inspector \nwhile inspecting different types of venues like Home, offices, Vehicles, along with the exact \nlocation of the inspection, also the company should be able to check the status of the inspection \nlike pending, started, approved, rejected etc date wise.\n\nYou need to create 2 Restful API which will add the data and be able to search by all the parameters, \nUser should be authorized before adding and searching the data.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST {{url}}/authPerson",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"authPerson001@inspecto.com\",\n\t\"password\": \"person#001\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/authPerson",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"authPerson"
+					]
+				},
+				"description": "Add a new User"
+			},
+			"response": []
+		},
+		{
+			"name": "GET {{url}}/authPerson",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-auth",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmE0YzRlMDBkMmU3ODA0YWQ1NzIwMjQiLCJhY2Nlc3MiOiJhdXRoIiwiaWF0IjoxNTM3NTI0OTYwfQ.7cvE5dV4sYgIGnX9WGSXszbMF9qBxSHpqq-FMBnuZms"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"authPerson001@gameofthrones.com\",\n\t\"password\": \"person#001\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/authPerson",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"authPerson"
+					]
+				},
+				"description": "Get the List of Authenication User / People"
+			},
+			"response": []
+		},
+		{
+			"name": "POST {{url}}/authPerson/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"authPerson001@gameofthrones.com\",\n\t\"password\": \"person#001\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/authPerson/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"authPerson",
+						"login"
+					]
+				},
+				"description": "Login User : Verifies the hasded password and send the token back."
+			},
+			"response": []
+		},
+		{
+			"name": "POST {{url}}/inspect",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-auth",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmE0YzRlMDBkMmU3ODA0YWQ1NzIwMjQiLCJhY2Nlc3MiOiJhdXRoIiwiaWF0IjoxNTM3NTI0OTYwfQ.7cvE5dV4sYgIGnX9WGSXszbMF9qBxSHpqq-FMBnuZms"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"venue\": \"Office\",\n    \"city\": \"Mumbai\",\n    \"location\": {\n        \"cordinates\": [20.02571, 72.835967]\n    },\n    \"ownername\": \"Ravi\",\n    \"ownerdetails\": {\n        \"address\": \"Shop No. 4&5, Amarkunj CHS, Near HP Petrol Pump, Veer Sarvarkar Marg, Shivaji Park, Dadar West, Dadar West, Shivaji Park, Mumbai, Maharashtra 400028\",\n        \"phone\": 9807271564\n    },\n    \"status\": \"started\",\n    \"finalreport\": \"The home is great and fine.\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/inspect",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"inspect"
+					]
+				},
+				"description": "Add a new User"
+			},
+			"response": []
+		},
+		{
+			"name": "GET {{url}}/inspect",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-auth",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmE0YzRlMDBkMmU3ODA0YWQ1NzIwMjQiLCJhY2Nlc3MiOiJhdXRoIiwiaWF0IjoxNTM3NTI0OTYwfQ.7cvE5dV4sYgIGnX9WGSXszbMF9qBxSHpqq-FMBnuZms"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"authPerson001@gameofthrones.com\",\n\t\"password\": \"person#001\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/inspect?city=Mumbai&venue=Office&ownerdetails.phone=9807271564",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"inspect"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "Mumbai"
+						},
+						{
+							"key": "venue",
+							"value": "Office"
+						},
+						{
+							"key": "ownerdetails.phone",
+							"value": "9807271564"
+						}
+					]
+				},
+				"description": "Get the List of Authenication User / People"
+			},
+			"response": []
+		}
+	]
+}
