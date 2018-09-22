@@ -1,0 +1,12 @@
+{
+    "dev": {
+        "PORT": 7001,
+        "MONGODB_URL": "mongodb://localhost:27017/inspectodb",
+        "SECRET_PHRASE_JWT": "PIN#uihnmnjghlping$839-101"
+    },
+    "test": {
+        "PORT": 7002,
+        "MONGODB_URL": "mongodb://localhost:27017/inspectodb",
+        "SECRET_PHRASE_JWT": "PIN#uihnm1jghluiping^579-q01"
+    }
+}

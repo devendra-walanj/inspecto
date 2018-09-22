@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"inspectodb.authpeoples"},{"v":2,"unique":true,"key":{"email":1},"name":"email_1","ns":"inspectodb.authpeoples","background":true}],"uuid":"e60431ae0cd646bd84db034acfb9598a"}
