@@ -2,11 +2,19 @@
     "dev": {
         "PORT": 7001,
         "MONGODB_URL": "mongodb://localhost:27017/inspectodb",
-        "SECRET_PHRASE_JWT": "PIN#uihnmnjghlping$839-101"
+        "SECRET_PHRASE_JWT": "PIN#uihnmnjghlping$839-101",
+        "mysql_host": "localhost",
+        "mysql_user": "menagerie",
+        "mysql_password": "password",
+        "mysql_database": "menagerie"
     },
     "test": {
         "PORT": 7002,
         "MONGODB_URL": "mongodb://localhost:27017/inspectodb",
-        "SECRET_PHRASE_JWT": "PIN#uihnm1jghluiping^579-q01"
+        "SECRET_PHRASE_JWT": "PIN#uihnm1jghluiping^579-q01",
+        "mysql_host": "localhost",
+        "mysql_user": "root",
+        "mysql_password": "password",
+        "mysql_database": "inspectodb"
     }
 }

@@ -124,6 +124,37 @@
 			"response": []
 		},
 		{
+			"name": "POST {{url}}/inspect - MYSQL",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-auth",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmE0YzRlMDBkMmU3ODA0YWQ1NzIwMjQiLCJhY2Nlc3MiOiJhdXRoIiwiaWF0IjoxNTM3NTI0OTYwfQ.7cvE5dV4sYgIGnX9WGSXszbMF9qBxSHpqq-FMBnuZms"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"venue\": \"Office\",\n    \"city\": \"Avadh\",\n    \"location_latitude\": 10.02571, \n    \"location_longitude\": 74.835967,\n    \"ownername\": \"Soham Kedar\",\n    \"owner_address\": \"Shop No. 4&5, Amarkunj CHS, Near HP Petrol Pump, Veer Sarvarkar Marg, Shivaji Park, Dadar West, Dadar West, Shivaji Park, Indore, Maharashtra 400028\",\n    \"owner_phone\": 9817271564,\n    \"finalreport\": \"The home is great and fine.\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/inspect",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"inspect"
+					]
+				},
+				"description": "Add a new User"
+			},
+			"response": []
+		},
+		{
 			"name": "GET {{url}}/inspect",
 			"request": {
 				"method": "GET",
@@ -161,6 +192,43 @@
 						{
 							"key": "ownerdetails.phone",
 							"value": "9807271564"
+						}
+					]
+				},
+				"description": "Get the List of Authenication User / People"
+			},
+			"response": []
+		},
+		{
+			"name": "GET {{url}}/inspect - MYSQL",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-auth",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmE0YzRlMDBkMmU3ODA0YWQ1NzIwMjQiLCJhY2Nlc3MiOiJhdXRoIiwiaWF0IjoxNTM3NTI0OTYwfQ.7cvE5dV4sYgIGnX9WGSXszbMF9qBxSHpqq-FMBnuZms"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"authPerson001@gameofthrones.com\",\n\t\"password\": \"person#001\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/inspect?owner_phone=981%",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"inspect"
+					],
+					"query": [
+						{
+							"key": "owner_phone",
+							"value": "981%"
 						}
 					]
 				},

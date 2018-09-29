@@ -33,6 +33,21 @@ app.get("*", (req, res) => {
     res.status(404).send("Route not supported.");
 });
 
+process.on('uncaughtException', (err) => {
+    console.error((new Date).toUTCString() + ' uncaughtException:', err.message)
+    console.error(err.stack)
+    mConnection.end((err) => {
+        if (err) {
+            console.log(`Error Occured on connection end : ${err}`);
+        }
+    });
+    mySQL.end((err) => {
+        if (err) {
+            console.log(`Error Occured on connection end : ${err}`);
+        }
+    });
+    process.exit(1)
+});
 
 app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}...`);

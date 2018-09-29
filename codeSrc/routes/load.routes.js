@@ -4,8 +4,9 @@ var _ = require("lodash");
 const { ObjectID } = require("mongodb");
 
 module.exports = function (app) {
+    let ignoreRouteFile = "inspecto.routes.js";
     oFS.readdirSync(__dirname).forEach(function (file) {
-        if (file === "load.routes.js" || file.substr(file.lastIndexOf('.') + 1) !== 'js')   {
+        if (file === "load.routes.js" || file === ignoreRouteFile || file.substr(file.lastIndexOf('.') + 1) !== 'js')   {
             return;
         }        
         console.log(`Locading Routes : `);

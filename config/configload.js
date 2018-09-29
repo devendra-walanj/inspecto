@@ -6,6 +6,10 @@ if (enviro == 'dev' || enviro == 'test' ) {
     let enviroConfig = config[enviro];
 
     Object.keys(enviroConfig).forEach((okey) => {
+        // console.log(`config load : ${enviroConfig[okey].constructor} `);        
+        // if (enviroConfig[okey].constructor === {}.constructor) {
+        //     console.log(`okey: ${okey}; ${JSON.stringify(enviroConfig[okey])}`);            
+        // }
         process.env[okey] = enviroConfig[okey];
     })
 } 

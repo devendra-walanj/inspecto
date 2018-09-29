@@ -9,10 +9,14 @@ Welcome to the Inspecto API
 * GET /inspect : Get the list of inspection from the provided search criteria
 * POST /inspect : Adds the inspection records.
 
+**MySQL Scope is only for inspection table only and not for user authentication **
 
-**Access Information :**
+**Configuration and Access Information :**
 * Restore the provided dump from /documents using mongorestore 
-* Postman Collection and Environment are in Documents folder
+* Create and prepare the database in mySQL from the documents/dump/mySQL folder.
+* Change the mySQL Connection accordingly in config.json
+* Postman Collection[updated] and Environment are in Documents folder
+* if you require to switch to back to mongoDB please change the variable ignoreRouteFile at ../codeSrc/routes/load.routes.js.
 * User EmailID: authPerson001@inspecto.com
 * JWT Token to pass in header while using the /inspect endpoint 
   * x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmE0YzRlMDBkMmU3ODA0YWQ1NzIwMjQiLCJhY2Nlc3MiOiJhdXRoIiwiaWF0IjoxNTM3NTI0OTYwfQ.7cvE5dV4sYgIGnX9WGSXszbMF9qBxSHpqq-FMBnuZms
